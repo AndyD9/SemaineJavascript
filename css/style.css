@@ -10,9 +10,11 @@
 }
 
 .controlPanel {
-  background-color: red;
   justify-content: center:
   align-items: center;
+}
 
-
+.progressBar{
+  height: 4px;
+  color : red;
 }
