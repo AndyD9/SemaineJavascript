@@ -73,3 +73,7 @@ function mute(){
     btnmute.innerHTML = "Unmute";
   }
 }
+
+function setvolume(){
+  video.volume = Barvolume.value / 100;
+}

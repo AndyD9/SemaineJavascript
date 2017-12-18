@@ -1,10 +1,18 @@
 .container{
   text-align: center;
 }
-#video{
+.video{
   width: 50%;
 }
 
-#volumeBar{
+.volumeBar{
   width: 80px;
+}
+
+.controlPanel {
+  background-color: red;
+  justify-content: center:
+  align-items: center;
+
+
 }
