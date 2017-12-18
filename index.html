@@ -10,18 +10,18 @@
 <body>
   <div class="container">
     <div class="video-player">
-      <video id="video" src="test.mp4"></video>
+      <video class="video" src="test.mp4"></video>
     </div>
-    <div id="controlPanel">
-      <button id="play-pause-btn" onclick="toggleVideo();">Lecture</button>
-      <button id="stop" onclick="stopvideo();">Stop</button>
-      <progress id="progressBar" min="0" max="100" value="0"></progress>
-      <button id="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
-      <button id="mutebtn" onclick="mute();">Mute Bouton</button>
-      <input id="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
+    <div class="controlPanel">
+      <button class="play-pause-btn" onclick="toggleVideo();">Lecture</button>
+      <button class="stop" onclick="stopvideo();">Stop</button>
+      <progress class="progressBar" min="0" max="100" value="0"></progress>
+      <button class="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
+      <button class="mutebtn" onclick="mute();">Mute Bouton</button>
+      <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
     </div>
   </div>
 
-<script src="js/java.js" charset="utf-8"></script>
+<script src="js/lecteurVideo.js" charset="utf-8"></script>
 </body>
 </html>

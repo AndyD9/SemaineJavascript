@@ -1,6 +1,12 @@
 var mediaPlayer;
 var progressBar;
 var mutebtn;
+var video = document.querySelector('.video');
+var Barvolume = document.querySelector('.volumeBar');
+var mediaPlayer = document.querySelector('.video')
+var progressBar = document.querySelector('.progressBar');
+
+
 
 document.addEventListener('DOMContentLoaded',function(){
   initPlayer();
@@ -8,8 +14,6 @@ document.addEventListener('DOMContentLoaded',function(){
 }, false);
 
 function initPlayer() {
-  mediaPlayer = document.getElementById('video');
-  progressBar = document.getElementById('progressBar');
   mediaPlayer.addEventListener('timeupdate', updateBar, false);
   progressBar.addEventListener('click', seek);
 }
@@ -17,7 +21,7 @@ function initPlayer() {
 //function pour play/pause la Video
 
 function toggleVideo() {
-  var btn = document.getElementById('play-pause-btn');
+  var btn = document.querySelector('.play-pause-btn');
   if (mediaPlayer.paused || mediaPlayer.endend) {
       btn.innerHTML = "Pause Video";
       mediaPlayer.play();
@@ -33,7 +37,7 @@ function toggleVideo() {
 function stopvideo() {
   mediaPlayer.pause();
   mediaPlayer.currentTime = 0;
-  document.getElementById('play-pause-btn').innerHTML = "Play Video";
+  document.querySelector('.play-pause-btn').innerHTML = "Play Video";
 }
 
 function updateBar (){
@@ -48,7 +52,7 @@ function seek(e) {
 }
 
 function fullscreen() {
-  var element = document.getElementById('video');
+  var element = document.querySelector('.video');
   if (element.mozRequestFullScreen) {
     element.mozRequestFullScreen();
   } else if (element.webkitRequestFullScreen) {
@@ -56,23 +60,16 @@ function fullscreen() {
   }
 }
 
-mutebtn = document.getElementById('mutebtn')
-mutebtn.addEventListener('click', false);
 function mute(){
+  var btnmute = document.querySelector('.mutebtn')
   if (video.muted){
-    volumeBar.value = oldvol;
+    Barvolume.value = oldvol;
     video.muted = false;
     mutebtn.innerHTML = "Mute";
   } else {
-    oldvol = volumeBar.value;
-    volumeBar.value = 0;
+    oldvol = Barvolume.value;
+    Barvolume.value = 0;
     video.muted = true;
     mutebtn.innerHTML = "Unmute";
   }
-}
-
-volumeslider = document.getElementById('volumeBar')
-volumeslider.addEventListener('change', false)
-function setvolume(){
-  video.volume = volumeBar.value / 100;
 }
