@@ -1,4 +1,4 @@
-var container = document.querySelector('.container');
+var container = document.querySelector('.miniatures-container');
 var movie = '';
 
 for (var i = 0; i < data.films.length; i++) {
@@ -7,7 +7,7 @@ for (var i = 0; i < data.films.length; i++) {
 
 container.innerHTML = movie;
 
-var titles = document.querySelectorAll('.title');
+var img = document.querySelectorAll('img');
 var modal = document.querySelector('.modal');
 var overlay = document.querySelector('.modal-overlay');
 var modalTitle = document.querySelector('.modal .title');
@@ -29,8 +29,8 @@ videoSrc.addEventListener('click', function(event) {
   video.src = src;
 });
 
-for (let i = 0; i < titles.length; i++) {
-  titles[i].addEventListener('click', function(event) {
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener('click', function(event) {
       modalTitle.innerHTML = 'Title: ' + data.films[i].title;
       duration.innerHTML = data.films[i].duration;
       description.innerHTML = data.films[i].description;
