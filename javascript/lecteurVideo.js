@@ -1,6 +1,7 @@
 var mediaPlayer;
 var progressBar;
 var mutebtn;
+var playerContainer = document.querySelector('.Playercontainer');
 var video = document.querySelector('.video');
 var Barvolume = document.querySelector('.volumeBar');
 var mediaPlayer = document.querySelector('.video')
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded',function(){
 }, false);
 
 function initPlayer() {
-  mediaPlayer.addEventListener('timeupdate', updateBar, false);
+  // mediaPlayer.addEventListener('timeupdate', updateBar, false);
   progressBar.addEventListener('click', seek);
 }
 
