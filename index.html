@@ -6,9 +6,29 @@
   <title>pop Fiction</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-  <div class="container"></div>
+<header class="header-container">
+  <div class="nav-container">
+  <div class="logo-container">
+    <img class="logo" src="" alt="">
+  </div>
+  <ul class="nav-list">
+    <li class="nav-list-items"><a class="nav-list-link" href="#">accueil</a></li>
+    <li class="nav-list-items"><a class="nav-list-link" href="#">catégories</a></li>
+    <li class="nav-list-items"><a class="nav-list-link" href="#">fan pages</a></li>
+    <li class="nav-list-items"><a class="nav-list-link" href="#">livre d'or</a></li>
+    <li class="nav-list-items"><a class="nav-list-link" href="#">forum</a></li>
+  </ul>
+  <div class="profile-container">
+    <img src="" alt="" class="img-profile">
+  </div>
+  </div>
+</header>
+<body class="body">
+  <div class="main-img-container">
+    <img class="main-img" src="" alt="">
+  </div>
+  <div class="body-container">
+  <div class="miniatures-container"></div>
   <div class="modal">
     <div class="modal-overlay"></div>
     <div class="modal-content">
@@ -32,6 +52,7 @@
       <button class="mutebtn" onclick="mute();">Mute </button>
       <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
     </div>
+  </div>
   </div>
 
   <script type="text/javascript" src="javascript/data.js"></script>
