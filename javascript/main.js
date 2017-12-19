@@ -3,7 +3,7 @@ var container = document.querySelector('.container');
 var movie = '';
 
 for (var i = 0; i < data.films.length; i++) {
-  movie += "<h1 class='title'>" + data.films[i].title + "</h1>";
+  movie += "<img src=" + data.films[i].img + ">";
 }
 
 container.innerHTML = movie;
