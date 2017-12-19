@@ -18,7 +18,25 @@
       <a href="" class="video-src">watch me !!!!</a>
     </div>
   </div>
+
+  <div class="Playercontainer">
+    <div class="video-player">
+      <video class="video" src="test.mp4"></video>
+    </div>
+    <div class="controlPanel">
+      <button class="play-pause-btn" onclick="toggleVideo();">Lecture</button>
+      <button class="stop" onclick="stopvideo();">Stop</button>
+      <progress class="progressBar" min="0" max="100" value="0"></progress>
+      <span class="curtimetexte">0:00</span> / <span class="durtimetexte">0:00</span>
+      <button class="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
+      <button class="mutebtn" onclick="mute();">Mute </button>
+      <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
+    </div>
+  </div>
+
   <script type="text/javascript" src="javascript/data.js"></script>
+  <script type="text/javascript" src="javascript/lecteurVideo.js"></script>
   <script type="text/javascript" src="javascript/main.js"></script>
+
 </body>
 </html>

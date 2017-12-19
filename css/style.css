@@ -1,4 +1,15 @@
-.container{
+body {
+  position: relative;
+}
+
+.curtimetexte{
+  color: #fff;
+}
+.durtimetexte{
+  color: #fff;
+}
+.Playercontainer{
+  display: none;
   text-align: center;
 }
 .video{
@@ -9,14 +20,74 @@
   width: 80px;
 }
 
+.overlaycontrol{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
 .controlPanel {
-  justify-content: center:
-  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .50s ease-in-out;
+}
+.controlPanel:hover{
+  opacity: 1;
 }
 
-.progressBar{
-  height: 4px;
-  color : red;
+progress:not(value) {
+	/* Add your styles here. As part of this walkthrough we will focus only on determinate progress bars. */
+}
+
+/* Styling the determinate progress element */
+
+progress[value] {
+	/* Get rid of the default appearance */
+	appearance: none;
+
+	/* This unfortunately leaves a trail of border behind in Firefox and Opera. We can remove that by setting the border to none. */
+	border: none;
+
+	/* Add dimensions */
+	width: 100%; height: 6px;
+
+	/* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
+	  background-color: whiteSmoke;
+	  border-radius: 3px;
+	  box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+
+	/* Of all IE, only IE10 supports progress element that too partially. It only allows to change the background-color of the progress value using the 'color' attribute. */
+	color: royalblue;
+
+	position: relative;
+	margin: 0 0 1.5em;
+}
+
+/*
+Webkit browsers provide two pseudo classes that can be use to style HTML5 progress element.
+-webkit-progress-bar -> To style the progress element container
+-webkit-progress-value -> To style the progress element value.
+*/
+
+progress[value]::-webkit-progress-bar {
+	background-color: whiteSmoke;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #FDC00C;
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
 .modal {
