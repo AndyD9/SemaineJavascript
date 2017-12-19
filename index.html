@@ -1,28 +1,25 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/reset.css">
+  <meta charset="utf-8">
+  <title>tocarick (AKA pop fiction)</title>
   <link rel="stylesheet" href="css/style.css">
-  <title>VideoPlayertest</title>
 </head>
+
 <body>
-  <div class="container">
-    <div class="video-player">
-      <video class="video" src="test.mp4"></video>
-    </div>
-    <div class="controlPanel">
-      <button class="play-pause-btn" onclick="toggleVideo();">Lecture</button>
-      <button class="stop" onclick="stopvideo();">Stop</button>
-      <progress class="progressBar" min="0" max="100" value="0"></progress>
-      <span class="curtimetexte">0:00</span> / <span class="durtimetexte">0:00</span>
-      <button class="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
-      <button class="mutebtn" onclick="mute();">Mute </button>
-      <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
+  <div class="container"></div>
+
+  <div class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <p class="title"></p>
+      <p class="duration"></p>
+      <p class="description"></p>
+      <a href="" class="video-src">watch me !!!!</a>
     </div>
   </div>
-
-<script src="js/lecteurVideo.js" charset="utf-8"></script>
+  <script type="text/javascript" src="javascript/data.js"></script>
+  <script type="text/javascript" src="javascript/main.js"></script>
 </body>
 </html>
