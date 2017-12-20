@@ -14,6 +14,8 @@ var title = document.querySelector('.title');
 var duration = document.querySelector('.duration');
 var date = document.querySelector('.date');
 var description = document.querySelector('.description');
+var titleYear = document.querySelector('.title-year');
+var noteGlobal = document.querySelector('.global-note');
 var videoSrc = document.querySelector('.video-src');
 var modalplay = document.querySelector('.modalvideo');
 var modalplayercontent = document.querySelector('.modalvideo-overlay');
@@ -33,17 +35,35 @@ for (let i = 0; i < img.length; i++) {
     duration.innerHTML = "Durée: " + data.films[i].duration + "min";
     date.innerHTML = "Année de sortie: " + data.films[i].year;
     description.innerHTML = "Description :" + data.films[i].description;
+    titleYear.innerHTML = "<p class=\"title\">" + data.films[i].title + "</p>" + "<p class=\"year\">"+"(" + data.films[i].year + ")" + "</p>";
+    noteGlobal.innerHTML = " ";
+    for (var j = 0; j < data.films[i].rating; j++) {
+      noteGlobal.innerHTML += " * ";
+    }
+
     modal.style.display = 'block';
     // videoSrc.href ='videos/' + data.films[i].src;
     src = 'videos/' + data.films[i].src;
 
   });
 }
+
+var descriptionPart = document.querySelector('.description-part');
+var reviewsPart = document.querySelector('.reviews-part');
+var descriptionModal = document.querySelector('.description-modal-container');
+var reviewsModal = document.querySelector('.reviews-modal-container');
+
+descriptionPart.addEventListener('click', function(event) {
+  reviewsModal.style.display = 'none';
+  descriptionModal.style.display = 'block';
+})
+
+reviewsPart.addEventListener('click', function(event) {
+  descriptionModal.style.display = 'none';
+  reviewsModal.style.display = 'block';
+})
+
 // show categories
-var navCategories = document.querySelector('.nav-category');
-var homePrez = document.querySelector('.home-presentation');
-var actionTag = document.querySelector('.action-tag');
-var categoriesPrez = document.querySelector('.categories-presentation');
 var actionCatContainer = document.querySelector('.action-category-container');
 var animCatContainer = document.querySelector('.anim-category-container');
 var comedyCatContainer = document.querySelector('.comedy-category-container');
@@ -78,15 +98,84 @@ for (var i = 0; i < data.films.length; i++) {
       allCatContainer.innerHTML = allMovies;
   }
 
+var navCategories = document.querySelector('.nav-categories');
+var navHome = document.querySelector('.nav-home');
+var homePrez = document.querySelector('.home-presentation');
+var categoriesPrez = document.querySelector('.categories-presentation');
+var allTag = document.querySelector('.all-tag');
+var categoryTitle = document.querySelectorAll('h4');
+
+navCategories.addEventListener('click', function(event) {
+  homePrez.style.display = 'none';
+  categoriesPrez.style.display = 'block';
+  allCatContainer.style.display = 'none';
+})
+
+navHome.addEventListener('click', function(event) {
+  homePrez.style.display = 'block';
+  categoriesPrez.style.display = 'none';
+  allCatContainer.style.display = 'none';
+})
+
+var actionTag = document.querySelector('.action-tag');
+var animTag = document.querySelector('.anim-tag');
+var comedyTag = document.querySelector('.comedy-tag');
+var horrorTag = document.querySelector('.horror-tag');
+
 actionTag.addEventListener('click', function(event) {
-  actionCatContainer.style.display = 'block';
+  actionCatContainer.style.display = 'flex';
   animCatContainer.style.display = 'none';
   comedyCatContainer.style.display = 'none';
   horrorCatContainer.style.display = 'none';
   allCatContainer.style.display = 'none';
-  console.log(event);
+  for (let i = 0; i < categoryTitle.length; i++) {
+    categoryTitle[i].style.display = 'none';
+  }
 })
 
+animTag.addEventListener('click', function(event) {
+  animCatContainer.style.display = 'flex';
+  actionCatContainer.style.display = 'none';
+  comedyCatContainer.style.display = 'none';
+  horrorCatContainer.style.display = 'none';
+  allCatContainer.style.display = 'none';
+  for (let i = 0; i < categoryTitle.length; i++) {
+    categoryTitle[i].style.display = 'none';
+  }
+})
+
+comedyTag.addEventListener('click', function(event) {
+  comedyCatContainer.style.display = 'flex';
+  animCatContainer.style.display = 'none';
+  actionCatContainer.style.display = 'none';
+  horrorCatContainer.style.display = 'none';
+  allCatContainer.style.display = 'none';
+  for (let i = 0; i < categoryTitle.length; i++) {
+    categoryTitle[i].style.display = 'none';
+  }
+})
+
+horrorTag.addEventListener('click', function(event) {
+  horrorCatContainer.style.display = 'flex';
+  comedyCatContainer.style.display = 'none';
+  animatContainer.style.display = 'none';
+  actionCatContainer.style.display = 'none';
+  allCatContainer.style.display = 'none';
+  for (let i = 0; i < categoryTitle.length; i++) {
+    categoryTitle[i].style.display = 'none';
+  }
+})
+
+allTag.addEventListener('click', function(event) {
+  allCatContainer.style.display = 'flex';
+  animCatContainer.style.display = 'none';
+  comedyCatContainer.style.display = 'none';
+  horrorCatContainer.style.display = 'none';
+  actionCatContainer.style.display = 'none';
+  for (let i = 0; i < categoryTitle.length; i++) {
+    categoryTitle[i].style.display = 'none';
+  }
+})
 
 /*
 navCategories.addEventListener('click', function(event) {

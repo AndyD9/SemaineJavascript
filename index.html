@@ -13,10 +13,10 @@
       <img class="logo" src="" alt="">
     </div>
     <ul class="nav-list">
-      <li class="nav-list-items"><a class="nav-list-link" href="#">accueil</a></li>
-      <li class="nav-list-items nav-category"><a class="nav-list-link" href="#">catégories</a></li>
-      <li class="nav-list-items"><a class="nav-list-link" href="#">Les mieux notés</a></li>
-      <li class="nav-list-items"><a class="nav-list-link" href="#">Les tendances</a></li>
+      <li class="nav-list-items nav-home"><a class="nav-list-link" href="#">accueil</a></li>
+      <li class="nav-list-items nav-categories"><a class="nav-list-link" href="#">catégories</a></li>
+      <li class="nav-list-items"><a class="nav-list-link" href="#">Les populaires</a></li>
+      <li class="nav-list-items"><a class="nav-list-link" href="#">Les nouveautés</a></li>
       <li class="nav-list-items"><a class="nav-list-link" href="#">forum</a></li>
     </ul>
     <div class="profile-container">
@@ -34,6 +34,11 @@
           <div class="img-modal-container">
           </div>
           <div class="txt-modal-container">
+            <div class="modal-header">
+              <p class="text-modal-header description-part">Fiche descriptive</p>
+              <p>|</p>
+              <p class="text-modal-header reviews-part">les avis</p>
+            </div>
             <div class="description-modal-container">
               <h1 class="title"></h1>
               <h2 class="duration"></h2>
@@ -43,7 +48,70 @@
                 <a class="video-src" href="">voir le film</a>
               </div>
             </div>
-            <div class="reviews-modal-container"></div>
+            <div class="reviews-modal-container">
+              <div class="rated-movie">
+              <h1 class="title-year"></h1>
+              <p class="global-note"></p>
+              </div>
+              <div class="stars-review">
+                <p class="aka">Chef-d'oeuvre :</p>
+                <p class="stars">* * * * *</p>
+                <p class="voteNumber">7 votes</p>
+              </div>
+              <div class="stars-review">
+              <p class="aka">Très bon :</p>
+              <p class="stars">* * * *</p>
+              <p class="voteNumber">23 votes</p>
+              </div>
+              <div class="stars-review">
+              <p class="aka">Bon :</p>
+              <p class="stars">* * *</p>
+              <p class="voteNumber">16 votes</p>
+              </div>
+              <div class="stars-review">
+              <p class="aka">Moyen :</p>
+              <p class="stars">* *</p>
+              <p class="voteNumber">8 votes</p>
+              </div>
+              <div class="stars-review">
+              <p class="aka">À oublier :</p>
+              <p class="stars">*</p>
+              <p class="voteNumber">6 votes</p>
+              </div>
+              <h5 class="last-reviews-title">Les derniers avis :</h5>
+
+
+              <div class="main-reviews-container">
+                <div class="last-review-container">
+                  <div class="profile-container">
+                    <p class="name">Lindsey S.</p>
+                    <p class="location">Seattle, USA</p>
+                    <p class="age">26 ans</p>
+                  </div>
+                  <div class="post-container">
+                    <div class="rate-info">
+                      <div class="member-rate">* * * * *</div>
+                      <div class="post-date">27 Nov 2017</div>
+                    </div>
+                    <p class="post">Ce film est top ! Les acteurs se donnent à fond et les effets spéciaux très bien réalisés !! BRAVO !!!</p>
+                  </div>
+                </div>
+                <div class="last-review-container">
+                  <div class="profile-container">
+                    <p class="name">Matt K.</p>
+                    <p class="location">Lyon, France</p>
+                    <p class="age">32 ans</p>
+                  </div>
+                  <div class="post-container">
+                    <div class="rate-info">
+                      <div class="member-rate">* * *</div>
+                      <div class="post-date">15 Nov 2017</div>
+                    </div>
+                    <p class="post">Ce film n'est pas un chef-d'oeuvre mais il se laisse gentillement regarder.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -63,32 +131,33 @@
       </div>
     </div>
     <div class="home-presentation">
-      <p class="tag">les films</p>
+      <p class="tag-movies">les films</p>
       <div class="row-container">
 
       </div>
     </div>
     <div class="categories-presentation">
       <ul class="category-tag-list">
-        <p class="tag">catégories</p>
-        <li class="action-tag tag-item">Action</li>
-        <li class="anim-tag tag-item"><a href="" class="tag-link">Animation</a></li>
-        <li class="comedy-tag tag-item"><a href="" class="tag-link">Comedie</a></li>
-        <li class="tag-item"><a href="" class="horror-tag tag-link">Horreur/Thriller</a></li>
-        <li class="all-tag tag-item"><a href="" class="tag-link">Tout voir</a></li>
+        <p class="tag-category">catégories</p>
+        <li class="action-tag tag-item"> Action</li>
+        <li class="anim-tag tag-item">Animation</li>
+        <li class="comedy-tag tag-item">Comedie</li>
+        <li class="horror-tag tag-item">Horreur/Thriller</li>
+        <li class="all-tag tag-item">Tout voir</li>
       </ul>
-      <p class="category-title">action</p>
-      <section class="row-container action-category-container"></section>
-      <p class="category-title">anim</p>
+      <h4 class="category-title">action ></h4>
+      <section class="row-container action-category-container">
+      </section>
+      <h4 class="category-title">anim ></h4>
       <section class="row-container anim-category-container"></section>
-      <p class="category-title">comedy</p>
+      <h4 class="category-title">comedy ></h4>
       <section class="row-container comedy-category-container"></section>
-      <p class="category-title">horror</p>
+      <h4 class="category-title">horror ></h4>
       <section class="row-container horror-category-container"></section>
-      <p class="category-title">all</p>
       <section class="row-container all-category-container"></section>
     </div>
   </div>
+
 
   <script type="text/javascript" src="javascript/data.js"></script>
   <script type="text/javascript" src="javascript/lecteurVideo.js"></script>
