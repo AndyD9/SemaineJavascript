@@ -6,12 +6,12 @@ var video = document.querySelector('.video');
 var Barvolume = document.querySelector('.volumeBar');
 var mediaPlayer = document.querySelector('.video')
 var progressBar = document.querySelector('.progressBar');
-var btn = document.querySelector('.play-pause-btn');
 var btnmultifonction = document.querySelector('.play-pause-btn');
 var element = document.querySelector('.video');
 var btnmute = document.querySelector('.mutebtn');
 var textcurtime = document.querySelector('.curtimetexte');
 var textdurtime = document.querySelector('.durtimetexte')
+var mtnbtn = document.querySelector('.muteimg');
 
 
 document.addEventListener('DOMContentLoaded',function(){
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',function(){
 }, false);
 
 function initPlayer() {
-  // mediaPlayer.addEventListener('timeupdate', updateBar, false);
+  mediaPlayer.addEventListener('timeupdate', updateBar, false);
   progressBar.addEventListener('click', seek);
 }
 
@@ -28,11 +28,11 @@ function initPlayer() {
 
 function toggleVideo() {
   if (mediaPlayer.paused || mediaPlayer.endend) {
-      btn.innerHTML = "Pause";
+      btnmultifonction.style.backgroundImage = "url(../img/pausebtn.svg)";
       mediaPlayer.play();
 
   } else{
-    btn.innerHTML = "Lecture";
+    btnmultifonction.style.backgroundImage = "url(../img/playbtn.png)";
     mediaPlayer.pause();
   }
 }
@@ -42,7 +42,7 @@ function toggleVideo() {
 function stopvideo() {
   mediaPlayer.pause();
   mediaPlayer.currentTime = 0;
-  btnmultifonction.innerHTML = "Lecture";
+  btnmultifonction.style.backgroundImage = "url(../img/playbtn.png)";
 }
 
 function updateBar (){
@@ -81,15 +81,15 @@ function mute(){
   if (video.muted){
     Barvolume.value = oldvol;
     video.muted = false;
-    btnmute.innerHTML = "Mute";
   } else {
     oldvol = Barvolume.value;
     Barvolume.value = 0;
     video.muted = true;
-    btnmute.innerHTML = "Unmute";
   }
 }
 
 function setvolume(){
   video.volume = Barvolume.value / 100;
 }
+
+// input volumbe bar
