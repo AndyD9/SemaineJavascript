@@ -5,54 +5,89 @@
   <meta charset="utf-8">
   <title>pop Fiction</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css">
 </head>
 <header class="header-container">
   <div class="nav-container">
-  <div class="logo-container">
-    <img class="logo" src="" alt="">
-  </div>
-  <ul class="nav-list">
-    <li class="nav-list-items"><a class="nav-list-link" href="#">accueil</a></li>
-    <li class="nav-list-items"><a class="nav-list-link" href="#">catégories</a></li>
-    <li class="nav-list-items"><a class="nav-list-link" href="#">fan pages</a></li>
-    <li class="nav-list-items"><a class="nav-list-link" href="#">livre d'or</a></li>
-    <li class="nav-list-items"><a class="nav-list-link" href="#">forum</a></li>
-  </ul>
-  <div class="profile-container">
-    <img src="" alt="" class="img-profile">
-  </div>
+    <div class="logo-container">
+      <img class="logo" src="" alt="">
+    </div>
+    <ul class="nav-list">
+      <li class="nav-list-items"><a class="nav-list-link" href="#">accueil</a></li>
+      <li class="nav-list-items nav-category"><a class="nav-list-link" href="#">catégories</a></li>
+      <li class="nav-list-items"><a class="nav-list-link" href="#">Les mieux notés</a></li>
+      <li class="nav-list-items"><a class="nav-list-link" href="#">Les tendances</a></li>
+      <li class="nav-list-items"><a class="nav-list-link" href="#">forum</a></li>
+    </ul>
+    <div class="profile-container">
+      <img src="" alt="" class="img-profile">
+    </div>
   </div>
 </header>
-<body class="body">
-  <div class="main-img-container">
-    <img class="main-img" src="" alt="">
-  </div>
-  <div class="body-container">
-  <div class="miniatures-container"></div>
-  <div class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-      <p class="title"></p>
-      <p class="duration"></p>
-      <p class="description"></p>
-      <a href="" class="video-src">watch me !!!!</a>
-    </div>
-  </div>
 
-  <div class="Playercontainer">
-    <div class="video-player">
-      <video class="video" src="test.mp4"></video>
+<body class="body">
+  <div class="body-container">
+    <div class="main-img-container">
+      <img class="main-img" src="" alt="">
+      <div class="modal">
+        <div class="modal-container">
+          <div class="img-modal-container">
+          </div>
+          <div class="txt-modal-container">
+            <div class="description-modal-container">
+              <h1 class="title"></h1>
+              <h2 class="duration"></h2>
+              <h3 class="date"></h3>
+              <p class="description"></p>
+              <div class="video-src-container">
+                <a class="video-src" href="">voir le film</a>
+              </div>
+            </div>
+            <div class="reviews-modal-container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="Playercontainer">
+        <div class="video-player">
+          <video class="video" src="test.mp4"></video>
+        </div>
+        <div class="controlPanel">
+          <button class="play-pause-btn" onclick="toggleVideo();">Lecture</button>
+          <button class="stop" onclick="stopvideo();">Stop</button>
+          <progress class="progressBar" min="0" max="100" value="0"></progress>
+          <span class="curtimetexte">0:00</span> / <span class="durtimetexte">0:00</span>
+          <button class="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
+          <button class="mutebtn" onclick="mute();">Mute </button>
+          <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
+        </div>
+      </div>
     </div>
-    <div class="controlPanel">
-      <button class="play-pause-btn" onclick="toggleVideo();">Lecture</button>
-      <button class="stop" onclick="stopvideo();">Stop</button>
-      <progress class="progressBar" min="0" max="100" value="0"></progress>
-      <span class="curtimetexte">0:00</span> / <span class="durtimetexte">0:00</span>
-      <button class="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
-      <button class="mutebtn" onclick="mute();">Mute </button>
-      <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
+    <div class="home-presentation">
+      <p class="tag">les films</p>
+      <div class="row-container">
+
+      </div>
     </div>
-  </div>
+    <div class="categories-presentation">
+      <ul class="category-tag-list">
+        <p class="tag">catégories</p>
+        <li class="action-tag tag-item">Action</li>
+        <li class="anim-tag tag-item"><a href="" class="tag-link">Animation</a></li>
+        <li class="comedy-tag tag-item"><a href="" class="tag-link">Comedie</a></li>
+        <li class="tag-item"><a href="" class="horror-tag tag-link">Horreur/Thriller</a></li>
+        <li class="all-tag tag-item"><a href="" class="tag-link">Tout voir</a></li>
+      </ul>
+      <p class="category-title">action</p>
+      <section class="row-container action-category-container"></section>
+      <p class="category-title">anim</p>
+      <section class="row-container anim-category-container"></section>
+      <p class="category-title">comedy</p>
+      <section class="row-container comedy-category-container"></section>
+      <p class="category-title">horror</p>
+      <section class="row-container horror-category-container"></section>
+      <p class="category-title">all</p>
+      <section class="row-container all-category-container"></section>
+    </div>
   </div>
 
   <script type="text/javascript" src="javascript/data.js"></script>
@@ -60,4 +95,5 @@
   <script type="text/javascript" src="javascript/main.js"></script>
 
 </body>
+
 </html>
