@@ -29,7 +29,122 @@
 body {
   position: relative;
 }
+/*Custom COntrol in full Screen*/
+
 /*media player style*/
+button.fullscreen .fullscreenimg{
+  width: 20px;
+  margin-bottom: 50%;
+}
+
+button.fullscreen{
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button.fullscreen:hover .fullscreenimg {
+   box-shadow:300px 0 0 0 #FDC00C inset;
+}
+
+
+button.play-pause-btn{
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button.play-pause-btn:hover .playbouton {
+   box-shadow:300px 0 0 0 #FDC00C inset;
+   -moz-border-radius-topleft: 10px;
+   -moz-border-radius-topright: 10px;
+   -moz-border-radius-bottomright: 10px;
+   -moz-border-radius-bottomleft: 10px;
+   -webkit-border-radius: 10px 10px 10px 10px;
+   border-radius: 10px 10px 10px 10px;
+
+}
+
+.playbouton{
+  width: 20px;
+  margin-bottom: 50%
+}
+
+button.stop{
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  outline: none;
+}
+button.stop:hover .stopbouton {
+   box-shadow:300px 0 0 0 #FDC00C inset;
+   -moz-border-radius-topleft: 10px;
+   -moz-border-radius-topright: 10px;
+   -moz-border-radius-bottomright: 10px;
+   -moz-border-radius-bottomleft: 10px;
+   -webkit-border-radius: 10px 10px 10px 10px;
+   border-radius: 10px 10px 10px 10px;
+}
+
+
+.stopbouton{
+  width: 20px;
+  margin-bottom: 50%
+}
+button.mutebtn{
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button.mutebtn:hover .muteimg {
+   box-shadow:300px 0 0 0 #FDC00C inset;
+   -moz-border-radius-topleft: 10px;
+   -moz-border-radius-topright: 10px;
+   -moz-border-radius-bottomright: 10px;
+   -moz-border-radius-bottomleft: 10px;
+   -webkit-border-radius: 10px 10px 10px 10px;
+   border-radius: 10px 10px 10px 10px;
+}
+.muteimg{
+  width: 20px;
+  margin-bottom: 50%;
+}
+.controlPanel {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 710px;
+  height: 30px;
+  z-index: 2147483647;
+}
+.play-pause-btn{
+  height: 30px;
+  outline: none;
+  background-image: url(../img/playbtn.png);
+  border: none;
+  border-radius:1px;
+  box-shadow: 0 9px #95a5a6;
+}
 .curtimetexte{
   color: #fff;
 }
@@ -45,6 +160,7 @@ body {
   left: 0;
   right: 0;
   margin: 0;
+  height: 100%;
 }
 .video{
   height: 400px;
@@ -62,20 +178,9 @@ body {
   height: 100%;
   z-index: 10;
 }
-.controlPanel {
-  background-color: blue;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  margin: auto;
-  width: 710px;
-  opacity: 1;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .50s ease-in-out;
-}
-.controlPanel:hover{
-  opacity: 1;
-}
+
+
+
 
 .progressBar:not(value) {
 	/* Add your styles here. As part of this walkthrough we will focus only on determinate progress bars. */
@@ -84,6 +189,7 @@ body {
 /* Styling the determinate progress element */
 
 .progressBar[value] {
+  cursor: pointer;
 	/* Get rid of the default appearance */
 	appearance: none;
 
@@ -95,14 +201,15 @@ body {
 
 	/* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
 	  background-color: whiteSmoke;
-	  border-radius: 3px;
+	  border-radius: 1px;
 	  box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
 
 	/* Of all IE, only IE10 supports progress element that too partially. It only allows to change the background-color of the progress value using the 'color' attribute. */
 	color: royalblue;
 
 	position: relative;
-	margin: 0 0 1.5em;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 /*
@@ -122,6 +229,58 @@ Webkit browsers provide two pseudo classes that can be use to style HTML5 progre
 
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+input[type=range] {
+    margin: auto;
+    outline: none;
+    padding: 0;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 20%;
+    height: 6px;
+    background-color: #FDC00C;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+    border: 0;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 1px 0px rgba(0,0,0,0.1);
+    -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: 0;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 1px 0px rgba(0,0,0,0.1);
 }
 /*END media player style*/
 
@@ -343,4 +502,8 @@ a {
   width: 20%;
   margin: auto;
   display: none;
+}
+
+::-webkit-media-controls {
+  display:none !important;
 }
