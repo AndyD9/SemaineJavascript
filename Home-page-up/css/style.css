@@ -15,16 +15,30 @@ html{
   font-size: 20px;
 }
 .create-account{
+  font-family: Roboto;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
   position: absolute;
   margin-left: -9%;
   margin-top: 10%;
   text-decoration: none;
+  background: none;
+  border: none;
   color: #fdc00c;
 }
 .login-account{
+  font-family: Roboto;
   position: absolute;
   margin-left: 11%;
   margin-top: 10%;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: #fdc00c;
 }
 .compte{
   text-decoration: none;
@@ -53,7 +67,12 @@ display: none;
   font-family: Barry Kades_PersonalUseOnly;
   src: url(font/Barry Kades_PersonalUseOnly.ttf)
 }
+
 */
+body{
+  margin: 0;
+
+}
   .title{
     position: absolute;
     margin-left: 23%;
@@ -157,8 +176,12 @@ display: none;
    font-family: 'Roboto', sans-serif;
   }
   /* LE TEXTE SE CONNECTER & DE CREER UN COMPTE*/
-  .LOGIN{
+  .buttonconnect{
     position: absolute;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
     margin-left: 47.2%;
     margin-top: 54%;
     font-size: 27px;
@@ -229,3 +252,15 @@ display: none;
     position: absolute;
     margin-top: 60%;
   }
+
+/* MESSAGE ERREUR */
+
+.alertmsgp{
+  display: flex;
+  font-family: Roboto;
+  color: #ED0100;
+  position: absolute;
+  font-size: 21px;
+  margin-left: 3%;
+  margin-top: 60%;
+}

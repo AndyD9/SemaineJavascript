@@ -2,6 +2,9 @@
 var create = document.querySelector('.create-account');
 var signIn = document.querySelector('.sign-in');
 var log = document.querySelector('.log');
+var compt = document.querySelector('.compte');
+var loga = document.querySelector('.logAcc-deco');
+var login = document.querySelector('.login-account');
 
 create.addEventListener('click', function(event) {
   signIn.style.display = 'block';
@@ -53,3 +56,9 @@ pwField.addEventListener('blur', function() {
     pwField.value = 'Choose a password';
   }
 })
+
+
+compt.addEventListener('click', function(){
+  login.display = 'none';
+
+});

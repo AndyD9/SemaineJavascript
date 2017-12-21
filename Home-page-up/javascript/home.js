@@ -2,8 +2,24 @@
 var create = document.querySelector('.create-account');
 var signIn = document.querySelector('.sign-in');
 var log = document.querySelector('.log');
+var hydcr = document.querySelector('.login-account');
+var hydlo = document.querySelector('.create-account');
 
+function hydecr() {
+  if (hydlo.style.display === "none") {
+    hydlo.style.display = "block";
+  } else {
+    hydlo.style.display = "none";
+  }
+}
 
+function hydelo() {
+  if (hydcr.style.display === "none") {
+    hydcr.style.display = "block";
+  } else {
+    hydcr.style.display = "none";
+  }
+}
 create.addEventListener('click', function(event) {
   signIn.style.display = 'block';
   signUp.style.display = '';
@@ -54,3 +70,29 @@ pwField.addEventListener('blur', function() {
     pwField.value = 'Choose a password';
   }
 })
+
+
+// VALIDATION DU MOT DE PASSE //
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate() {
+  var username = document.querySelector('.mail-Case').value;
+  var password = document.querySelector('.passeword-Case').value;
+  var sub = document.querySelector('.buttonconnect')
+  var alertmsgPara = document.querySelector('.alertmsgp');
+  if (username == "groupe18" && password == "grp18") {
+    alert("Connecter !");
+    window.location = "../index.html"; // Redirecting to other page.
+    return false;
+  } else {
+    attempt--; // Decrementing by one.
+    alertmsgPara.innerHTML =" Le mot de passe ou l'adresse mail ne correspondent pas !";
+    // Disabling fields after 3 attempts.
+    if (attempt === 0) {
+      username.disabled = true;
+      password.disabled = true;
+      sub.disabled = true;
+      return false;
+    }
+  }
+}
