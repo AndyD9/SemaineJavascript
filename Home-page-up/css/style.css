@@ -1,0 +1,231 @@
+
+html{
+  background-color: black;
+}
+/*logIn page*/
+.log {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 150px;
+
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto' Condensed, sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.create-account{
+  position: absolute;
+  margin-left: -9%;
+  margin-top: 10%;
+  text-decoration: none;
+  color: #fdc00c;
+}
+.login-account{
+  position: absolute;
+  margin-left: 11%;
+  margin-top: 10%;
+}
+.compte{
+  text-decoration: none;
+  color: #fdc00c;
+}
+.logAcc-deco{
+text-decoration: none;
+color: #fdc00c;
+}
+
+ /* MONTRER LES LOG-IN */
+
+.sign-in, .sign-up {
+display: none;
+
+}
+
+/* LES FONTS FACES avec LE TITRE*/
+
+/*
+@font face{
+  font-family: Barry Kades_PersonalUseOnly;
+  src: url(font/Barry_Kades_PersonalUseOnly.eot)
+}
+@font face{
+  font-family: Barry Kades_PersonalUseOnly;
+  src: url(font/Barry Kades_PersonalUseOnly.ttf)
+}
+*/
+  .title{
+    position: absolute;
+    margin-left: 23%;
+    text-align: center;
+}
+/* LE LOGO */
+.logo1{
+  position: absolute;
+  margin-left: 46.5%;
+  width: 135.72px;
+  height: 133px;
+  margin-top: 28%;
+}
+/*LES CASES DE L'IDENTIFICATION */
+ .mail-Case{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 35%;
+   width: 330px;
+   height: 44px;
+   background-color: #7a7a7a;
+   border-radius: 38px 38px;
+   outline: none;
+ }
+ .passeword-Case{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 45%;
+   width: 330px;
+   height: 44px;
+   background-color: #7a7a7a;
+   border-radius: 38px 38px;
+   outline: none;
+
+ }
+ .username-field{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 35%;
+   width: 330px;
+   height: 44px;
+   background-color: #7a7a7a;
+   border-radius: 38px 38px;
+   outline: none;
+
+ }
+ .pw-field{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 45%;
+   width: 330px;
+   height: 44px;
+   background-color: #7a7a7a;
+   border-radius: 38px 38px;
+   outline: none;
+
+ }
+
+ /* PASSWORD PSEUDO  */
+ .Pseudo {
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 33.3%;
+   font-size: 21px;
+   color: #b4b4b4;
+   font-family: 'Roboto', sans-serif;
+ }
+ .passeword{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 43.3%;
+   font-size: 21px;
+   color: #b4b4b4;
+   font-family: 'Roboto', sans-serif;
+ }
+ .Pseudo-choose{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 33.3%;
+   font-size: 21px;
+   color: #b4b4b4;
+   font-family: 'Roboto', sans-serif;
+
+ }
+ .passeword-choose{
+   position: absolute;
+   margin-left: 40%;
+   margin-top: 43.3%;
+   font-size: 21px;
+   color: #b4b4b4;
+   font-family: 'Roboto', sans-serif;
+ }
+
+ /* LE TEXTE SE SOUVENIR DE */
+ .souvenir{
+   position: absolute;
+   margin-left: 43%;
+   margin-top: 50.4%;
+   font-size: 18px;
+   color: #b4b4b4;
+   font-family: 'Roboto', sans-serif;
+  }
+  /* LE TEXTE SE CONNECTER & DE CREER UN COMPTE*/
+  .LOGIN{
+    position: absolute;
+    margin-left: 47.2%;
+    margin-top: 54%;
+    font-size: 27px;
+    color: #fdc00c;
+    font-family: 'Roboto', sans-serif;
+  }
+  .clic{
+    text-decoration: none;
+    color: #fdc00c;
+  }
+  .create-account2{
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 54%;
+    font-size: 27px;
+    color: #fdc00c;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+  }
+  /* LA CASE A COCHER*/
+  .choix{
+    background-color: ;
+    position: absolute;
+    margin-left:39.6%;
+    margin-top: 49.4%;
+    width: %;
+    height: %;
+  }
+  .souv-option{
+    background-color: green;
+    margin-left:10%;
+    width: 1000;
+    height: ;
+    -webkit-appearance: none;
+    position: relative;
+    height: 28px;
+    width: 27px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .souv-option:checked::before {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    line-height: 30px;
+
+  }
+
+  .souv-option.radio{
+    border-radius: 50%;
+  }
+  .div{
+    width:96%;
+    padding: 1%;
+    background-color:black;
+    position: absolute;
+    margin-top: 60%;
+  }
