@@ -1,0 +1,486 @@
+@font-face {
+  font-family: "montserrat-light";
+  src: url("fonts/Montserrat-Light.otf");
+}
+
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("fonts/Montserrat-Regular.otf");
+}
+
+@font-face {
+  font-family: "montserrat-bold";
+  src: url("fonts/Montserrat-Bold.otf");
+}
+
+@font-face {
+  font-family: "montserrat-italic";
+  src: url("fonts/Montserrat-MediumItalic.otf");
+}
+
+@font-face {
+  font-family: "raleway-light";
+  src: url("fonts/Raleway-Light.ttf");
+}
+
+@font-face {
+  font-family: "raleway-regular";
+  src: url("fonts/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-family: "raleway-bold";
+  src: url("fonts/Raleway-Bold.ttf");
+}
+
+body {
+  position: relative;
+}
+
+/*media player style*/
+
+.curtimetexte {
+  color: #fff;
+}
+
+.durtimetexte {
+  color: #fff;
+}
+
+.Playercontainer {
+  display: none;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.video {
+  height: 400px;
+}
+
+.volumeBar {
+  width: 80px;
+}
+
+.overlaycontrol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.controlPanel {
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto;
+  width: 710px;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .50s ease-in-out;
+}
+
+.controlPanel:hover {
+  opacity: 1;
+}
+
+.progressBar:not(value) {
+  /* Add your styles here. As part of this walkthrough we will focus only on determinate progress bars. */
+}
+
+/* Styling the determinate progress element */
+
+.progressBar[value] {
+  /* Get rid of the default appearance */
+  appearance: none;
+  /* This unfortunately leaves a trail of border behind in Firefox and Opera. We can remove that by setting the border to none. */
+  border: none;
+  /* Add dimensions */
+  width: 100%;
+  height: 6px;
+  /* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
+  background-color: whiteSmoke;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+  /* Of all IE, only IE10 supports progress element that too partially. It only allows to change the background-color of the progress value using the 'color' attribute. */
+  color: royalblue;
+  position: relative;
+  margin: 0 0 1.5em;
+}
+
+/*
+Webkit browsers provide two pseudo classes that can be use to style HTML5 progress element.
+-webkit-progress-bar -> To style the progress element container
+-webkit-progress-value -> To style the progress element value.
+*/
+
+.progressBar[value]::-webkit-progress-bar {
+  background-color: whiteSmoke;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+}
+
+.progressBar[value]::-webkit-progress-value {
+  background-color: #FDC00C;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+/*END media player style*/
+
+/*nav bar*/
+
+.header-container {
+  width: 100%;
+  background: #1a1a1a;
+}
+
+.nav-container {
+  width: 85%;
+  display: flex;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.logo-container {
+  width: 10%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-list-items {
+  text-transform: uppercase;
+  font-family: montserrat-light;
+  font-size: 14px;
+}
+
+.nav-list-link {
+  color: #cccccc;
+}
+
+.nav-list-link:hover {
+  color: #FDC00C;
+}
+
+/*end nav bar*/
+
+/*Main part*/
+
+.body {
+  background: #000;
+}
+
+.body-container {
+  width: 85%;
+  margin: auto;
+}
+
+.miniatures-container {
+  text-align: center;
+}
+
+.main-img-container {
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
+  background: #1a1a1a;
+  margin: 2% auto;
+  position: relative;
+}
+
+/*modal*/
+
+.modal {
+  display: none;
+}
+
+.modal-container {
+  z-index: 10;
+  background: #1a1a1a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 10px 0;
+}
+
+.text-modal-header {
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+.text-modal-header:hover {
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 20px;
+  color: #FDC00C;
+}
+
+.global-note {
+  color: #FDC00C;
+}
+
+.reviews-modal-container {
+  display: none;
+}
+
+.img-modal-container {
+  width: 55%;
+}
+
+.img-modal {
+  width: 100%;
+}
+
+.txt-modal-container {
+  width: 45%;
+  color: #cccccc;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: montserrat-bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.year {
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.title-year, .rated-movie, .rate-info {
+  display: flex;
+}
+
+.rated-movie {
+  flex-wrap: wrap;
+}
+
+.stars-review {
+  display: flex;
+  padding: 5px 0;
+  font-family: montserrat-regular;
+  font-size: 13px;
+}
+
+.stars {
+  width: 50px;
+}
+
+.aka {
+  width: 110px;
+}
+
+.main-reviews-container {
+  width: 100%;
+}
+
+.last-review-container {
+  display: flex;
+  padding: 10px 0;
+  font-family: montserrat-regular;
+  border-bottom: 1px solid #444;
+  line-height: 18px;
+}
+
+.name {
+  font-size: 13px;
+  font-family: montserrat-bold;
+}
+
+.member-rate {
+  color: #FDC00C;
+}
+
+.post {
+  font-size: 13px;
+}
+
+.location, .age {
+  font-size: 12px;
+}
+
+.post-date {
+  font-size: 12px;
+  padding-left: 10px;
+  font-family: montserrat-italic;
+}
+
+.profile-container {
+  width: 30%;
+}
+
+.post-container {
+  width: 70%;
+}
+
+.last-reviews-title {
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 10px;
+  margin: 20px 0 0 0;
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.voteNumber {
+  padding-left: 20px;
+  color: grey;
+  font-size: 12px;
+}
+
+.duration {
+  font-family: arial;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.date {
+  font-family: arial;
+  font-size: 14px;
+  padding: 5px 0 20px 0;
+}
+
+.description {
+  font-family: arial;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.video-src-container {
+  margin: 30px auto;
+}
+
+.video-src {
+  background: #444;
+  padding: 5px 10px;
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  color: #cccccc;
+}
+
+.video-src:hover {
+  color: #FDC00C;
+}
+
+/*end modal*/
+
+.row-container, .row-category-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.miniature-container {
+  width: 20%;
+}
+
+.miniature {
+  width: 100%;
+}
+
+.tags-container {
+  display: flex;
+}
+
+.category-tag-list {
+  justify-content: space-between;
+  width: 800px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.tag-item {
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 50px;
+  color: #cccccc;
+  background: #444;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.tag-item:hover {
+  color: #FDC00C;
+}
+
+.tag-movies {
+  width: 100px;
+  background: #FDC00C;
+  padding: 10px 10px;
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  margin: 58px 0 40px 0;
+}
+
+.tag-categories {
+  width: 100px;
+  background: #FDC00C;
+  padding: 10px 10px;
+  font-family: montserrat-regular;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  margin: 58px 0 40px 0;
+}
+/*end main part*/
+
+/*logIn page*/
+
+.log {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 150px;
+}
+
+.sign-in, .sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: auto;
+  display: none;
+}

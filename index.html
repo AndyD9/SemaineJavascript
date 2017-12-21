@@ -50,8 +50,8 @@
             </div>
             <div class="reviews-modal-container">
               <div class="rated-movie">
-              <h1 class="title-year"></h1>
-              <p class="global-note"></p>
+                <h1 class="title-year"></h1>
+                <p class="global-note"></p>
               </div>
               <div class="stars-review">
                 <p class="aka">Chef-d'oeuvre :</p>
@@ -59,27 +59,26 @@
                 <p class="voteNumber">7 votes</p>
               </div>
               <div class="stars-review">
-              <p class="aka">Très bon :</p>
-              <p class="stars">* * * *</p>
-              <p class="voteNumber">23 votes</p>
+                <p class="aka">Très bon :</p>
+                <p class="stars">* * * *</p>
+                <p class="voteNumber">23 votes</p>
               </div>
               <div class="stars-review">
-              <p class="aka">Bon :</p>
-              <p class="stars">* * *</p>
-              <p class="voteNumber">16 votes</p>
+                <p class="aka">Bon :</p>
+                <p class="stars">* * *</p>
+                <p class="voteNumber">16 votes</p>
               </div>
               <div class="stars-review">
-              <p class="aka">Moyen :</p>
-              <p class="stars">* *</p>
-              <p class="voteNumber">8 votes</p>
+                <p class="aka">Moyen :</p>
+                <p class="stars">* *</p>
+                <p class="voteNumber">8 votes</p>
               </div>
               <div class="stars-review">
-              <p class="aka">À oublier :</p>
-              <p class="stars">*</p>
-              <p class="voteNumber">6 votes</p>
+                <p class="aka">À oublier :</p>
+                <p class="stars">*</p>
+                <p class="voteNumber">6 votes</p>
               </div>
               <h5 class="last-reviews-title">Les derniers avis :</h5>
-
 
               <div class="main-reviews-container">
                 <div class="last-review-container">
@@ -120,44 +119,29 @@
           <video class="video" src="test.mp4"></video>
         </div>
         <div class="controlPanel">
-          <button class="play-pause-btn" onclick="toggleVideo();"><img class="playbouton" src="img/playb.svg" alt=""></button>
-          <button class="stop" onclick="stopvideo();"><img class="stopbouton" src="img/stopbouton.svg" alt=""></button>
+          <button class="play-pause-btn" onclick="toggleVideo();">Lecture</button>
+          <button class="stop" onclick="stopvideo();">Stop</button>
           <progress class="progressBar" min="0" max="100" value="0"></progress>
           <span class="curtimetexte">0:00</span> / <span class="durtimetexte">0:00</span>
-          <button class="fullscreen" onclick="fullscreen('player'); return false"><img class="fullscreenimg" src="img/fullscreen.svg" alt=""></button>
-          <button class="mutebtn" onclick="mute();"><img class="muteimg" src="img/speaker.svg" alt=""></button>
-          <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="25" /></input>
+          <button class="fullscreen" onclick="fullscreen('player'); return false">Full Screen</button>
+          <button class="mutebtn" onclick="mute();">Mute </button>
+          <input class="volumeBar" onchange="setvolume();" type="range" min="0" max="100" value="100" /></input>
         </div>
       </div>
     </div>
-    <div class="home-presentation">
+    <div class="movies-presentation">
       <p class="tag-movies">les films</p>
-      <div class="row-container">
-
-      </div>
-    </div>
-    <div class="categories-presentation">
       <ul class="category-tag-list">
-        <p class="tag-category">catégories</p>
+        <p class="tag-categories">categories</p>
         <li class="action-tag tag-item"> Action</li>
         <li class="anim-tag tag-item">Animation</li>
         <li class="comedy-tag tag-item">Comedie</li>
         <li class="horror-tag tag-item">Horreur/Thriller</li>
         <li class="all-tag tag-item">Tout voir</li>
       </ul>
-      <h4 class="category-title">action ></h4>
-      <section class="row-container action-category-container">
-      </section>
-      <h4 class="category-title">anim ></h4>
-      <section class="row-container anim-category-container"></section>
-      <h4 class="category-title">comedy ></h4>
-      <section class="row-container comedy-category-container"></section>
-      <h4 class="category-title">horror ></h4>
-      <section class="row-container horror-category-container"></section>
-      <section class="row-container all-category-container"></section>
+      <div class="row-container"></div>
     </div>
   </div>
-
 
   <script type="text/javascript" src="javascript/data.js"></script>
   <script type="text/javascript" src="javascript/lecteurVideo.js"></script>
