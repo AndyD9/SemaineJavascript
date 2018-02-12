@@ -4,8 +4,25 @@ var movie = '';
 for (var i = 0; i < data.films.length; i++) {
   movie += "<div class=\"miniature-container\"><img class=\"miniature\" src=" + data.films[i].img + "></div>";
 }
-
 container.innerHTML = movie;
+
+var imgContainer = document.querySelectorAll('.miniature-container');
+
+for (var i = 0; i < data.films.length; i++)
+switch (data.films[i].category) {
+    case 'Action':
+      imgContainer[i].classList.add('action');
+    break;
+    case 'Animation':
+      imgContainer[i].classList.add('anim');
+      break;
+    case 'Comedy':
+      imgContainer[i].classList.add('comedy');
+      break;
+    case 'Horror / Thriller':
+      imgContainer[i].classList.add('horror');
+      break;
+  }
 
 var img = document.querySelectorAll('.miniature');
 var modal = document.querySelector('.modal');
@@ -20,11 +37,13 @@ var videoSrc = document.querySelector('.video-src');
 var modalplay = document.querySelector('.modalvideo');
 var modalplayercontent = document.querySelector('.modalvideo-overlay');
 var src;
+var sliderContainer = document.querySelector('.slider-container');
 
 videoSrc.addEventListener('click', function(event) {
   event.preventDefault();
   modal.style.display = ''; // empty string = return to default state
   playerContainer.style.display = 'block';
+  sliderContainer.style.display = 'none';
   video.src = src;
 });
 
@@ -40,11 +59,10 @@ for (let i = 0; i < img.length; i++) {
     for (var j = 0; j < data.films[i].rating; j++) {
       noteGlobal.innerHTML += " * ";
     }
-
     modal.style.display = 'block';
+    sliderContainer.style.display = 'none';
     // videoSrc.href ='videos/' + data.films[i].src;
     src = 'videos/' + data.films[i].src;
-
   });
 }
 
@@ -63,147 +81,141 @@ reviewsPart.addEventListener('click', function(event) {
   reviewsModal.style.display = 'block';
 })
 
-// show categories
-var actionCatContainer = document.querySelector('.action-category-container');
-var animCatContainer = document.querySelector('.anim-category-container');
-var comedyCatContainer = document.querySelector('.comedy-category-container');
-var horrorCatContainer = document.querySelector('.horror-category-container');
-var allCatContainer = document.querySelector('.all-category-container');
-var actionMovies = '';
-var animMovies = '';
-var comedyMovies = '';
-var horrorMovies = '';
-var allMovies = '';
+var closeButtonModal = document.querySelector('.close-button-modal');
 
-for (var i = 0; i < data.films.length; i++) {
-  switch (data.films[i].category) {
-      case 'Action':
-        actionMovies += "<div class=\"miniature-container\"><img class=\"miniature\" src=" +    data.films[i].img + "></div>";
-        actionCatContainer.innerHTML = actionMovies;
-      break;
-      case 'Animation':
-        animMovies += "<div class=\"miniature-container\"><img class=\"miniature\" src=" + data.films[i].img + "></div>";
-        animCatContainer.innerHTML = animMovies;
-        break;
-      case 'Comedy':
-        comedyMovies += "<div class=\"miniature-container\"><img class=\"miniature\" src=" + data.films[i].img + "></div>";
-        comedyCatContainer.innerHTML = comedyMovies;
-        break;
-      case 'Horror / Thriller':
-        horrorMovies += "<div class=\"miniature-container\"><img class=\"miniature\" src=" + data.films[i].img + "></div>";
-        horrorCatContainer.innerHTML = horrorMovies;
-        break;
-    }
-      allMovies += "<div class=\"miniature-container\"><img class=\"miniature\" src=" + data.films[i].img + "></div>";
-      allCatContainer.innerHTML = allMovies;
-  }
+closeButtonModal.addEventListener('click', function(event) {
+  modal.style.display = '';
+  sliderContainer.style.display = '';
+})
+
+var closeButtonVideo = document.querySelector('.close-button-video');
+
+closeButtonVideo.addEventListener('click', function(event) {
+  playerContainer.style.display = '';
+  sliderContainer.style.display = '';
+})
 
 var navCategories = document.querySelector('.nav-categories');
 var navHome = document.querySelector('.nav-home');
-var homePrez = document.querySelector('.home-presentation');
+var homePrez = document.querySelector('.movies-presentation');
 var categoriesPrez = document.querySelector('.categories-presentation');
 var allTag = document.querySelector('.all-tag');
-var categoryTitle = document.querySelectorAll('h4');
+var tagMovies = document.querySelector('.tag-movies');
+var tagCategories = document.querySelector('.tag-categories');
+var categoryTagList = document.querySelector('.category-tag-list');
 
 navCategories.addEventListener('click', function(event) {
-  homePrez.style.display = 'none';
-  categoriesPrez.style.display = 'block';
-  allCatContainer.style.display = 'none';
+  tagMovies.style.display = 'none';
+  categoryTagList.style.display = 'flex';
+  playerContainer.style.display = '';
+  sliderContainer.style.display = '';
+  modal.style.display = '';
 })
 
 navHome.addEventListener('click', function(event) {
-  homePrez.style.display = 'block';
-  categoriesPrez.style.display = 'none';
-  allCatContainer.style.display = 'none';
+  tagMovies.style.display = 'block';
+  categoryTagList.style.display = 'none';
+  for (var i = 0; i < imgContainer.length; i++) {
+     imgContainer[i].style.display = '';
+    }
+  playerContainer.style.display = '';
+  sliderContainer.style.display = '';
+  modal.style.display = '';
+})
+
+tagCategories.addEventListener('click', function(event) {
+  for (var i = 0; i < imgContainer.length; i++) {
+     imgContainer[i].style.display = '';
+    }
 })
 
 var actionTag = document.querySelector('.action-tag');
 var animTag = document.querySelector('.anim-tag');
 var comedyTag = document.querySelector('.comedy-tag');
 var horrorTag = document.querySelector('.horror-tag');
+var allTag = document.querySelector('.all-tag');
 
 actionTag.addEventListener('click', function(event) {
-  actionCatContainer.style.display = 'flex';
-  animCatContainer.style.display = 'none';
-  comedyCatContainer.style.display = 'none';
-  horrorCatContainer.style.display = 'none';
-  allCatContainer.style.display = 'none';
-  for (let i = 0; i < categoryTitle.length; i++) {
-    categoryTitle[i].style.display = 'none';
+  for (var i = 0; i < imgContainer.length; i++) {
+    if(imgContainer[i].classList.contains('action')) {
+     imgContainer[i].style.display = '';
+    } else {
+      imgContainer[i].style.display = 'none'
+    }
   }
 })
 
 animTag.addEventListener('click', function(event) {
-  animCatContainer.style.display = 'flex';
-  actionCatContainer.style.display = 'none';
-  comedyCatContainer.style.display = 'none';
-  horrorCatContainer.style.display = 'none';
-  allCatContainer.style.display = 'none';
-  for (let i = 0; i < categoryTitle.length; i++) {
-    categoryTitle[i].style.display = 'none';
+  for (var i = 0; i < imgContainer.length; i++) {
+    if(imgContainer[i].classList.contains('anim')) {
+     imgContainer[i].style.display = '';
+    } else {
+      imgContainer[i].style.display = 'none'
+    }
   }
 })
 
 comedyTag.addEventListener('click', function(event) {
-  comedyCatContainer.style.display = 'flex';
-  animCatContainer.style.display = 'none';
-  actionCatContainer.style.display = 'none';
-  horrorCatContainer.style.display = 'none';
-  allCatContainer.style.display = 'none';
-  for (let i = 0; i < categoryTitle.length; i++) {
-    categoryTitle[i].style.display = 'none';
+  for (var i = 0; i < imgContainer.length; i++) {
+    if(imgContainer[i].classList.contains('comedy')) {
+     imgContainer[i].style.display = '';
+    } else {
+      imgContainer[i].style.display = 'none'
+    }
   }
 })
 
 horrorTag.addEventListener('click', function(event) {
-  horrorCatContainer.style.display = 'flex';
-  comedyCatContainer.style.display = 'none';
-  animatContainer.style.display = 'none';
-  actionCatContainer.style.display = 'none';
-  allCatContainer.style.display = 'none';
-  for (let i = 0; i < categoryTitle.length; i++) {
-    categoryTitle[i].style.display = 'none';
+  for (var i = 0; i < imgContainer.length; i++) {
+    if(imgContainer[i].classList.contains('horror')) {
+     imgContainer[i].style.display = '';
+    } else {
+      imgContainer[i].style.display = 'none'
+    }
   }
 })
 
 allTag.addEventListener('click', function(event) {
-  allCatContainer.style.display = 'flex';
-  animCatContainer.style.display = 'none';
-  comedyCatContainer.style.display = 'none';
-  horrorCatContainer.style.display = 'none';
-  actionCatContainer.style.display = 'none';
-  for (let i = 0; i < categoryTitle.length; i++) {
-    categoryTitle[i].style.display = 'none';
+  for (var i = 0; i < imgContainer.length; i++) {
+     imgContainer[i].style.display = '';
   }
 })
 
-/*
-navCategories.addEventListener('click', function(event) {
-  homePrez.style.display = 'none';
-  categoriesPrez.style.display = 'block';
-  console.log(event);
-})*/
+/*SLIDER*/
+var slides = document.querySelectorAll('.slider-container .slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,3000);
 
-/*for (var i = 0; i < data.films.length; i++) {
-  if (data.films[i].category === 'Action') {
-    actionMovies += "<div class=\"miniature-container\"><img class=\"miniature\" src=" + data.films[i].img + "></div>";
-  }
+function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].className = 'slide showing';
 }
-rowCatContainer.innerHTML = actionMovies;
+var playing = true;
+var pauseButton = document.getElementById('pause');
 
-actionTag.style.border = '1px solid red';*/
+function pauseSlideshow() {
+    pauseButton.innerHTML = 'Play';
+    playing = false;
+    clearInterval(slideInterval);
+}
 
+function playSlideshow() {
+    pauseButton.innerHTML = 'Pause';
+    playing = true;
+    slideInterval = setInterval(nextSlide,2000);
+}
 
+pauseButton.onclick = function() {
+    if(playing) {
+    pauseSlideshow();
+  } else {
+    playSlideshow();
+  }
+};
 
-// CATEGORIES FILTERS
-//action filter
+/* END SLIDER */
 
-/*var animationCategory = document.querySelector('.animation-category');
-var comedyCategory = document.querySelector('.comedy-category');
-var horrorThrillerCategory = document.querySelector('.horror-thriller-category');
-var allCategoies = document.querySelector('.all-categories');*/
-
-// end category filter
 
 // [].slice.call(titles).filter(x => x.innerHTML.startsWith('Na'))
 
